@@ -1,0 +1,218 @@
+/*
+Reset
+*/
+:root {
+  --main-color: #457D97;
+  --main-light: #FFFDC0;
+}
+
+input,
+button {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+h2,
+h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 12px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 12px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+select {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+form ul{
+  list-style: none;
+}
+
+form ul {
+  margin-bottom: 0;
+}
+
+form li {
+  width: calc(100% - 9rem);
+  margin-bottom: 0;
+}
+
+form li:last-child {
+  width: 9rem;
+  text-align: right;
+}
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background-color: var(--main-color);
+}
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="color"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="email"]:focus,
+input[type="month"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus,
+input:not([type]):focus,
+textarea:focus,
+select:focus {
+  border-color: var(--main-color);
+}
+
+input[type="text"],
+textarea {
+  background-color: white;
+}
+
+label {
+  margin-top: 1rem;
+}
+
+input + [type="submit"] {
+  margin-top: 2rem;
+}
+/**/
+
+/*
+Global
+*/
+header,
+main,
+footer {
+  width: 100%;
+  max-width: 70rem;
+  margin: auto;
+}
+
+main {
+  min-height: 100vh;
+}
+
+body {
+  padding:40px;
+  font-family: "Lato";
+}
+
+header,
+footer {
+  height: 5rem;
+}
+
+footer p {
+  margin-top: 20px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 900;
+  width: 100%;
+}
+
+.logout {
+  margin-bottom: 30px;
+}
+
+/**/
+
+/*
+Post
+*/
+
+.more {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.post_detail {
+  margin-bottom: 50px;
+}
+
+.post-list {
+
+}
+
+.post-list_item {
+  background-color: var(--main-light);
+  padding: 5px 15px;
+  margin-bottom: 30px;
+}
+
+/**/
+
+/*
+Comment
+*/
+.post_comment {
+  margin-bottom: 20px;
+}
+
+.comment {
+  margin-bottom: 30px;
+}
+.comment .comment_item .comment_item-content {
+  margin-bottom: 8px;
+}
+.comment .comment_item .comment_item-author {
+  margin-bottom: 12px;
+}
+
+.comment_action {
+  display: flex;
+  align-items: center;
+}
+
+.comment_action button {
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+
+.comment_add {
+  margin-top: 40px;
+  background-color: var(--main-light);
+  padding: 15px;
+  margin-bottom: 50px;
+}
+
+/**/

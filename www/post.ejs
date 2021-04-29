@@ -1,0 +1,75 @@
+<!-- Importer le header en EJS -->
+<%- include('statics/header') -%>
+
+<main>
+  <div class="post_detail">
+    <h3><%- data.data.post.headline %></h3>
+    <p><%- data.data.post.body %></p>
+    <div>
+      <p>
+        <i><%- data.data.post.author.givenName %> <%- data.data.post.author.familyName %></i>
+        <div>
+          <% var postLike = data.data.likesPerUser.filter(like => like.post != null) %>
+          <% var isPostLiked = postLike.some(like => like.post.toString() ==
+          data.data.post._id.toString()) %> <% if(isPostLiked){ %> <% var postLikeId =
+          postLike.filter(like => like.post.toString() == data.data.post._id.toString())
+          %>
+          <button
+            onclick="like('post', 'delete', '<%- data.data.post.id %>', '<%- postLikeId[0]._id %>')"
+          >
+            <span><%- data.data.post.likes.length %> ♥</span>
+          </button>
+          <% } else{%>
+          <button onclick="like('post', 'create', '<%- data.data.post.id %>')">
+            <span><%- data.data.post.likes.length %> ♡</span>
+          </button>
+          <% } %>
+        </div>
+    </div>
+  </div>
+
+  <div class="post_comment">
+    <h4>Liste des commentaires :</h4>
+    <% if(data.data.comments.length == 0){ %>
+      <p>Pas de commentaires</p>
+    <% } %>
+
+    <% for(let comment of data.data.comments) { %>
+    <div class="comment">
+      <div class="comment_item">
+          <p class="comment_item-content">"<%- comment.content %>"</p>
+          <p class="comment_item-author"><i><%- comment.author.givenName %> <%- comment.author.familyName %></i></p>
+      </div>
+      <div class="comment_action">
+        <div class="comment_like">
+          <% var commentLike = data.data.likesPerUser.filter(like => like.comment != null) %>
+          <% var isCommentLiked = commentLike.some(like => like.comment.toString() ==
+          comment._id.toString()) %> <% if(isCommentLiked){ %> <% var commentLikeId =
+          commentLike.filter(like => like.comment.toString() == comment._id.toString())
+          %>
+          <button
+            onclick="like('comment', 'delete', '<%- comment._id %>', '<%- commentLikeId[0]._id %>')"
+          >
+            <span><%- comment.likes.length %> ♥</span>
+          </button>
+          <% } else{%>
+          <button onclick="like('comment', 'create', '<%- comment._id %>')">
+            <span><%- comment.likes.length %> ♡</span>
+          </button>
+          <% } %>
+        </div>
+        <div class="comment_delete">
+          <button onclick="deleteComment('<%- comment._id %>')">Supprimer le commentaire</button>
+        </div>
+      </div>
+    </div>
+      <% } %>
+  </div>
+
+  <div class="comment_add">
+    <%- include('components/form-comment') -%>
+  </div>
+</main>
+
+<!-- Importer le footer en EJS -->
+<%- include('statics/footer') -%>
